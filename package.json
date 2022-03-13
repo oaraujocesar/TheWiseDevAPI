@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:oaraujocesar/TheWiseDevAPI.git",
   "author": "César O. Araújo <oaraujocesar@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.1.1"
+  }
 }
