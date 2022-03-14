@@ -4,8 +4,8 @@ import { InMemoryUserRepository } from './in-memory-user-repository'
 describe('In memory User Repository', () => {
   it('should return null if user is not found', async () => {
     const users: User[] = []
-    const userRepo = new InMemoryUserRepository(users)
-    const user = await userRepo.findUserByEmail('any@email.com')
+    const sut = new InMemoryUserRepository(users)
+    const user = await sut.findUserByEmail('any@email.com')
 
     expect(user).toBeNull()
   })
@@ -14,11 +14,11 @@ describe('In memory User Repository', () => {
     const users: User[] = []
     const name = 'fake_name'
     const email = 'fake@email.com'
-    const userRepo = new InMemoryUserRepository(users)
+    const sut = new InMemoryUserRepository(users)
 
-    await userRepo.add({ name, email, })
+    await sut.add({ name, email, })
 
-    const user = await userRepo.findUserByEmail('fake@email.com')
+    const user = await sut.findUserByEmail('fake@email.com')
 
     expect(user).toStrictEqual({ name, email, })
   })
@@ -29,9 +29,9 @@ describe('In memory User Repository', () => {
       { name: 'Fran', email: 'fran@email.com', }
     ]
 
-    const userRepo = new InMemoryUserRepository(users)
+    const sut = new InMemoryUserRepository(users)
 
-    const registeredUsers = await userRepo.findAllUsers()
+    const registeredUsers = await sut.findAllUsers()
 
     expect(registeredUsers.length).toBe(2)
   })
