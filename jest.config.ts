@@ -4,9 +4,8 @@ export default {
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageDirectory: 'coverage',
-  coveragePathIgnorePatterns: [/[a-zA-Z]+\.spec\.ts$/],
   coverageProvider: 'v8',
-  testEnvironment: 'jest-environment-node',
+  testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest',
   },
